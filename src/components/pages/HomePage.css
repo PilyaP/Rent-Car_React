@@ -1,0 +1,35 @@
+.homepage {
+    padding: 20px;
+}
+
+.homepage__header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.homepage__header h1 {
+    margin: 0 0 10px;
+    font-size: 2em;
+}
+
+.homepage__header p {
+    margin: 0;
+    font-size: 1.2em;
+    color: gray;
+}
+
+.homepage__description,
+.homepage__features,
+.homepage__cta {
+    margin: 20px 0;
+}
+
+.homepage__features h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.homepage__features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
