@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { ModalContainer, Overlay } from './Modal.styled';
+import './Modal.css';
 import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ showModal, onClose, children }) => {
+export const Modal = ({ showModal, onClose, children }) => {
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = 'hidden';
@@ -31,11 +31,9 @@ const Modal = ({ showModal, onClose, children }) => {
     }
   };
   return createPortal(
-    <Overlay onClick={handleOverlayClick}>
-      <ModalContainer>{children}</ModalContainer>
-    </Overlay>,
+    <div className="modal-overlay" onClick={handleOverlayClick}>
+      <div className="modal-container">{children}</div>
+    </div>,
     modalRoot
   );
 };
-
-export default Modal;S

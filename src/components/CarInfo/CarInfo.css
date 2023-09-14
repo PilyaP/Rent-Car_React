@@ -1,0 +1,43 @@
+.modal-container {
+  width: 541px;
+  border-radius: 24px;
+  background: #fff;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+}
+.img-modal {
+  object-fit: cover;
+  border-radius: 15px;
+  height: 268px;
+  width: 100%;
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+.button-close {
+  position: absolute;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.svg-close {
+  width: 24px;
+  height: 24px;
+  stroke: #121417;
+  fill: none;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.svg-close:hover,
+.svg-close:focus {
+  stroke: #0b44cd;
+}

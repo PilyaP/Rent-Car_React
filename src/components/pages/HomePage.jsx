@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 
-function HomePage() {
+export const HomePage = () => {
   return (
     <div className="homepage">
       <header className="homepage__header">
@@ -34,6 +34,4 @@ function HomePage() {
       </section>
     </div>
   );
-}
-
-export default HomePage;
+};

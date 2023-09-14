@@ -1,33 +1,33 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header__logo {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .header__nav-list {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .header__nav-item {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .header__nav-link {
-    text-decoration: none;
-    color: #000;
-    font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
 }
 
 .header__nav-link--active {
-    font-weight: bold;
+  font-weight: bold;
 }

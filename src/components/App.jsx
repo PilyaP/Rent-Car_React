@@ -1,27 +1,27 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Loader from './Loader/Loader';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-// import HomePage from './pages/HomePage';
 
-const Home = lazy(() => import('components/pages/HomePage'));
-// const Favorite= lazy(() => import('components/pages/FavoritePage'));
-// const Catalog = lazy(() => import('components/pages/CatalogPage'));
+import { Loader } from './Loader/Loader';
+import { HomePage } from './pages/HomePage';
+import { CatalogPage } from './pages/CatalogPage/CatalogPage';
+
+// const Home = lazy(() => import('./pages/HomePage'));
+// const Catalog = lazy(() => import('./pages/CatalogPage'));
+// const FavoritePage = lazy(() => import('./pages/FavoritePage')); // Раскомментируйте и исправьте путь, если у вас есть страница избранного
 
 export const App = () => {
   return (
-    <>
-      <Suspense fallback={<Loader />}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/favorites" element={<FavoritePage />} /> */}
-        </Routes>
-        <Footer />
-      </Suspense>
-    </>
+    <Suspense fallback={<Loader />}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        {/* <Route path="/favorite" element={<FavoritePage />} />  Раскомментируйте, если у вас есть страница избранного */}
+      </Routes>
+      <Footer />
+    </Suspense>
   );
 };

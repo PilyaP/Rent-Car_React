@@ -1,0 +1,26 @@
+.car-image {
+  width: 274px;
+  height: 264px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.cars-list {
+  display: flex;
+  gap: 29px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-left: 78px; */
+}
+.cars-price {
+  display: flex;
+  justify-content: space-between;
+}
+.car-tags {
+  width: 270px;
+  height: 40px;
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
