@@ -1,8 +1,9 @@
+import { Loader } from 'components/Loader/Loader';
 import React, { useState, useEffect } from 'react';
 import './CatalogPage.css';
-import sprite from '../../sprite.svg';
 import { Modal } from 'components/Modal/Modal';
 import { CarInfo } from 'components/CarInfo/CarInfo';
+import sprite from '../../sprite.svg';
 
 export const CatalogPage = ({
   cars,
@@ -14,8 +15,8 @@ export const CatalogPage = ({
 }) => {
   const [displayedCarsCount, setDisplayedCarsCount] = useState(8);
   const [selectedCar, setSelectedCar] = useState(null);
-
-  const toggleModal = () => setSelectedCar(prevSelectedCar => !prevSelectedCar);
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -155,8 +156,8 @@ export const CatalogPage = ({
           </div>
         )}
       </div>
-      {selectedCar && (
-        <Modal onClose={toggleModal} showModal={selectedCar}>
+      {showModal && (
+        <Modal onClose={toggleModal} showModal={showModal}>
           <CarInfo car={selectedCar} toggleModal={toggleModal} />
         </Modal>
       )}
