@@ -33,19 +33,21 @@ export const App = () => {
     fetchCars();
 
     const storedFavoriteCars = JSON.parse(localStorage.getItem('favoriteCars'));
-    setFavoriteCars(storedFavoriteCars);
+    setFavoriteCars(storedFavoriteCars || []);
   }, []);
 
   const updateFavoriteCars = (carId, isFavorited) => {
-    if (isFavorited) {
-      setFavoriteCars(prevFavoriteCars => [...prevFavoriteCars, carId]);
-    } else {
-      setFavoriteCars(prevFavoriteCars =>
-        prevFavoriteCars.filter(id => id !== carId)
-      );
-    }
+    setFavoriteCars(prevFavoriteCars => {
+      let updatedFavoriteCars;
+      if (isFavorited) {
+        updatedFavoriteCars = [...prevFavoriteCars, carId];
+      } else {
+        updatedFavoriteCars = prevFavoriteCars.filter(id => id !== carId);
+      }
 
-    localStorage.setItem('favoriteCars', JSON.stringify(favoriteCars));
+      localStorage.setItem('favoriteCars', JSON.stringify(updatedFavoriteCars));
+      return updatedFavoriteCars;
+    });
   };
 
   return (

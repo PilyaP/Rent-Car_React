@@ -34,7 +34,7 @@ export const CatalogPage = ({
     };
 
     fetchCars();
-  }, []);
+  }, [setCars, setLoading]);
 
   const loadMoreCars = () => {
     setDisplayedCarsCount(prevCount => prevCount + 8);
