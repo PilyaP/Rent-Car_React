@@ -13,7 +13,12 @@ export const App = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const [favoriteCars, setFavoriteCars] = useState([]);
+  const [selectedCar, setSelectedCar] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
+  const toggleModal = value => {
+    setShowModal(value);
+  };
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -70,7 +75,16 @@ export const App = () => {
         />
         <Route
           path="/favorites"
-          element={<FavoritePage cars={cars} favoriteCars={favoriteCars} />}
+          element={
+            <FavoritePage
+              cars={cars}
+              favoriteCars={favoriteCars}
+              selectedCar={selectedCar}
+              setSelectedCar={setSelectedCar}
+              showModal={showModal}
+              toggleModal={toggleModal}
+            />
+          }
         />
       </Routes>
       <Footer />

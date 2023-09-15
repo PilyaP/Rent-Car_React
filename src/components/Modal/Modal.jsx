@@ -14,7 +14,7 @@ export const Modal = ({ showModal, onClose, children }) => {
 
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
-        onClose();
+        onClose(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -27,7 +27,7 @@ export const Modal = ({ showModal, onClose, children }) => {
 
   const handleOverlayClick = e => {
     if (e.currentTarget === e.target) {
-      onClose();
+      onClose(false);
     }
   };
   return createPortal(

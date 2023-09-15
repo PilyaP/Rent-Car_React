@@ -157,7 +157,7 @@ export const CatalogPage = ({
         )}
       </div>
       {showModal && (
-        <Modal onClose={toggleModal} showModal={showModal}>
+        <Modal onClose={toggleModal} showModal={selectedCar}>
           <CarInfo car={selectedCar} toggleModal={toggleModal} />
         </Modal>
       )}

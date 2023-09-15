@@ -41,3 +41,95 @@
 .svg-close:focus {
   stroke: #0b44cd;
 }
+
+.price-flex {
+  line-height: 24px;
+  font-size: 18px;
+}
+.info-tag__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: rgba(18, 20, 23, 0.5);
+  width: 275px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.info-tag__item {
+  border-right: 1px solid rgba(18, 20, 23, 0.5);
+  padding-right: 5px;
+}
+
+.info-tag__item:last-child {
+  border-right: none;
+}
+.description {
+  line-height: 20px;
+}
+.acc-func {
+  line-height: 20px;
+}
+
+.func-list {
+  margin-top: -4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: rgba(18, 20, 23, 0.5);
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.func-item {
+  border-right: 1px solid rgba(18, 20, 23, 0.5);
+  padding-right: 5px;
+}
+.func-item:last-child {
+  border-right: none;
+}
+
+.acc__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: rgba(18, 20, 23, 0.5);
+
+  font-size: 12px;
+  font-weight: 400;
+}
+.acc__item {
+  border-right: 1px solid rgba(18, 20, 23, 0.5);
+  padding-right: 5px;
+}
+.acc__item:last-child {
+  border-right: none;
+}
+.rental-conditions {
+  line-height: 20px;
+}
+.rental-conditions__list {
+  width: 461px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.rental-conditions__item {
+  font-family: Montserrat;
+  border-radius: 35px;
+  background-color: rgba(249, 249, 249, 1);
+  padding: 7px 14px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.rental-tel {
+  margin: 0 auto;
+  padding: 12px 50px;
+  background-color: #3470ff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  border-radius: 12px;
+}

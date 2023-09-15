@@ -1,10 +1,12 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
+  color: #121417;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,6 +20,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 button {
   cursor: pointer;
 }

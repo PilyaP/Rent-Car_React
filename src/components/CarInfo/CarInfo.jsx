@@ -47,49 +47,67 @@ export const CarInfo = ({ car, toggleModal }) => {
       </div>
       <div className="price-flex">
         <p>
-          {make} {model}, {year}
+          {make}
+          <span style={{ color: '#0b44cd' }}> {model}</span>, {year}
         </p>
       </div>
-      <ul>
-        <li>{address?.split(', ')[1] ?? ''}</li>
-        <li>{address?.split(', ')[2] ?? ''}</li>
-        <li>Id: {id}</li>
-        <li>Year: {year}</li>
-        <li>Type: {type}</li>
-        <li>Fuel Consumption: {fuelConsumption}</li>
-        <li>Engine Size: {engineSize}</li>
+      <ul className="info-tag__list">
+        <li className="info-tag__item">{address?.split(', ')[1] ?? ''}</li>
+        <li className="info-tag__item">{address?.split(', ')[2] ?? ''}</li>
+        <li className="info-tag__item">Id: {id}</li>
+        <li className="info-tag__item">Year: {year}</li>
+        <li className="info-tag__item">Type: {type}</li>
+        <li className="info-tag__item">Fuel Consumption: {fuelConsumption}</li>
+        <li className="info-tag__item">Engine Size: {engineSize}</li>
       </ul>
 
-      <p>{description}</p>
+      <p className="description">{description}</p>
 
-      <p>Accessories and functionalities:</p>
-      <ul>
+      <p className="acc-func">Accessories and functionalities:</p>
+      <ul className="func-list">
         {accessories.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="func-item" key={index}>
+            {item}
+          </li>
         ))}
       </ul>
-      <ul>
+      <ul className="acc__list">
         {functionalities.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="acc__item" key={index}>
+            {item}
+          </li>
         ))}
       </ul>
-      <p>Rental Conditions:</p>
-      <ul>
-        <li>
-          {ageCarsConditions[0]}: <span>{ageCarsConditions[1]}</span>
+      <p className="rental-conditions">Rental Conditions:</p>
+      <ul className="rental-conditions__list">
+        <li className="rental-conditions__item">
+          {ageCarsConditions[0]}:{' '}
+          <span style={{ color: '#0b44cd', fontWeight: 600 }}>
+            {ageCarsConditions[1]}
+          </span>
         </li>
 
         {carsConditions.slice(1).map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="rental-conditions__item" key={index}>
+            {item}
+          </li>
         ))}
-        <li>
-          Mileage: <span>{MileageFormat}</span>
+        <li className="rental-conditions__item">
+          Mileage:{' '}
+          <span style={{ color: '#0b44cd', fontWeight: 600 }}>
+            {MileageFormat}
+          </span>
         </li>
-        <li>
-          Price: <span>{rentalPrice}</span>
+        <li className="rental-conditions__item">
+          Price:{' '}
+          <span style={{ color: '#0b44cd', fontWeight: 600 }}>
+            {rentalPrice}
+          </span>
         </li>
       </ul>
-      <a href="tel:+380730000000">Rental car</a>
+      <a className="rental-tel" href="tel:+380730000000">
+        Rental car
+      </a>
     </div>
   );
 };
