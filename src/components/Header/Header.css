@@ -1,7 +1,4 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,4 +27,9 @@
 
 .header__nav-link--active {
   font-weight: bold;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

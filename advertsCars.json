@@ -1,5 +1,5 @@
 [
-     {
+ {
   "id": 9645,
   "year": 2020,
   "make": "BMW",
@@ -47,12 +47,12 @@
   ],
   "rentalPrice": "$220",
   "rentalCompany": "Premium Car Rentals",
-  "address": "789 Elite Street, Odesa, Ukraine",
+  "address": "789 Elite Street, Odessa, Ukraine",
   "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
   "mileage": 4500
  },
  {
-  "id": 9660,
+  "id": 8160,
   "year": 2018,
   "make": "Mercedes-Benz",
   "model": "C-Class",
@@ -135,7 +135,7 @@
   "make": "Ford",
   "model": "F-150",
   "type": "Pickup",
-  "img": "https://res.cloudinary.com/dhw6rxosn/image/upload/v1694705751/ford_f150.jpg",
+  "img": "https://res.cloudinary.com/dhw6rxosn/image/upload/v1694774870/ford_f150.jpg",
   "description": "The Ford F-150 is a versatile pickup truck known for its strong performance, towing capacity, and a comfortable and technology-filled cabin.",
   "fuelConsumption": "12.1",
   "engineSize": "3.3L V6",
@@ -177,7 +177,7 @@
   ],
   "rentalPrice": "$120",
   "rentalCompany": "Quality Car Rentals",
-  "address": "456 Quality St, Odesa, Ukraine",
+  "address": "456 Quality St, Odessa, Ukraine",
   "rentalConditions": "Minimum age: 23\nValid driver's license\nSecurity deposit and insurance required",
   "mileage": 3100
  },
@@ -203,7 +203,7 @@
   ],
   "rentalPrice": "$1000",
   "rentalCompany": "Elite Exotics Car Rentals",
-  "address": "101 Luxury Dr, Kyiv, Ukraine",
+  "address": "101 Luxury Dr, Dnipro, Ukraine",
   "rentalConditions": "Minimum age: 30\nValid driver's license\nSecurity deposit and comprehensive insurance required",
   "mileage": 800
  },
@@ -831,5 +831,4 @@
   "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
   "mileage": 6234
  }
-
 ]
