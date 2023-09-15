@@ -9,6 +9,7 @@ export const CatalogPage = ({
   cars,
   setCars,
   loading,
+  setFavoriteCars,
   setLoading,
   favoriteCars,
   updateFavoriteCars,
@@ -25,7 +26,15 @@ export const CatalogPage = ({
         const response = await fetch(
           'https://6501aa22736d26322f5c18c2.mockapi.io/cars'
         );
-        const data = await response.json();
+        let data = await response.json();
+
+        // Синхронизация поля isFavorited с массивом favoriteCars
+        const favoriteCarIds = new Set(favoriteCars);
+        data = data.map(car => ({
+          ...car,
+          isFavorited: favoriteCarIds.has(car.id),
+        }));
+
         setCars(data);
       } catch (error) {
         console.log(error.message);
@@ -35,7 +44,14 @@ export const CatalogPage = ({
     };
 
     fetchCars();
-  }, [setCars, setLoading]);
+  }, [setCars, setLoading, favoriteCars]);
+
+  useEffect(() => {
+    const storedFavoriteCars = JSON.parse(localStorage.getItem('favoriteCars'));
+    if (storedFavoriteCars) {
+      setFavoriteCars(storedFavoriteCars);
+    }
+  }, []);
 
   const loadMoreCars = () => {
     setDisplayedCarsCount(prevCount => prevCount + 8);
@@ -48,12 +64,17 @@ export const CatalogPage = ({
 
   const handleFavoriteClick = (event, car) => {
     event.stopPropagation();
-    const carIndex = cars.findIndex(item => item.id === car.id);
-    const updatedCars = [...cars];
-    updatedCars[carIndex].isFavorited = !updatedCars[carIndex].isFavorited;
-    setCars(updatedCars);
 
-    updateFavoriteCars(car.id, updatedCars[carIndex].isFavorited);
+    setCars(prevCars => {
+      const updatedCars = prevCars.map(item =>
+        item.id === car.id ? { ...item, isFavorited: !item.isFavorited } : item
+      );
+
+      const updatedCar = updatedCars.find(item => item.id === car.id);
+      updateFavoriteCars(updatedCar.id, updatedCar.isFavorited);
+
+      return updatedCars;
+    });
   };
 
   return (

@@ -43,14 +43,12 @@ export const App = () => {
 
   const updateFavoriteCars = (carId, isFavorited) => {
     setFavoriteCars(prevFavoriteCars => {
-      let updatedFavoriteCars;
-      if (isFavorited) {
-        updatedFavoriteCars = [...prevFavoriteCars, carId];
-      } else {
-        updatedFavoriteCars = prevFavoriteCars.filter(id => id !== carId);
-      }
+      const updatedFavoriteCars = isFavorited
+        ? [...prevFavoriteCars, carId]
+        : prevFavoriteCars.filter(id => id !== carId);
 
       localStorage.setItem('favoriteCars', JSON.stringify(updatedFavoriteCars));
+
       return updatedFavoriteCars;
     });
   };
@@ -64,6 +62,7 @@ export const App = () => {
           path="/catalog"
           element={
             <CatalogPage
+              setFavoriteCars={setFavoriteCars}
               cars={cars}
               setCars={setCars}
               loading={loading}
