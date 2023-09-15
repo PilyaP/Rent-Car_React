@@ -79,6 +79,7 @@ export const App = () => {
             <FavoritePage
               cars={cars}
               favoriteCars={favoriteCars}
+              setFavoriteCars={setFavoriteCars}
               selectedCar={selectedCar}
               setSelectedCar={setSelectedCar}
               showModal={showModal}

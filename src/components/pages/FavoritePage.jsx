@@ -3,108 +3,84 @@ import sprite from '../sprite.svg';
 import { Modal } from 'components/Modal/Modal';
 import { CarInfo } from 'components/CarInfo/CarInfo';
 import './FavoritePage.css';
+
 export const FavoritePage = ({
   cars,
   favoriteCars,
+  setFavoriteCars, // убедитесь, что setFavoriteCars импортирован или передан через пропы
   selectedCar,
   setSelectedCar,
   showModal,
   toggleModal,
 }) => {
-  console.log('Initial showModal value:', showModal);
   const handleCarClickNew = carDetails => {
-    console.log('Car clicked:', carDetails);
-    console.log('Setting selected car...');
     setSelectedCar(carDetails);
-    console.log('Toggling modal...');
     toggleModal(true);
-    console.log('Current state of showModal:', showModal);
+  };
+
+  const handleDeleteClick = carId => {
+    console.log('handleDeleteClick called with carId:', carId);
+
+    setFavoriteCars(prevFavoriteCars => {
+      const updatedFavoriteCars = prevFavoriteCars.filter(
+        carIdInList => String(carIdInList) !== String(carId)
+      );
+
+      console.log(updatedFavoriteCars);
+
+      // Обновление данных в локальном хранилище с использованием нового состояния
+      localStorage.setItem('favoriteCars', JSON.stringify(updatedFavoriteCars));
+
+      return updatedFavoriteCars;
+    });
   };
 
   const favoritesCars = cars.filter(car => favoriteCars.includes(car.id));
-  console.log(favoriteCars.length);
 
   return (
     <>
       <div className="favorite-container _container">
         <ul className="favorite-list">
-          {favoritesCars.map(
-            ({
-              id,
-              img,
-              make,
-              model,
-              year,
-              rentalPrice,
-              address,
-              type,
-              accessories,
-              rentalCompany,
-              mileage,
-              fuelConsumption,
-              engineSize,
-              description,
-              rentalConditions,
-              functionalities,
-              isFavorited,
-              handleFavoriteClick,
-            }) => (
-              <li className="favorite-item" key={id}>
-                <img
-                  className="favorite-image"
-                  src={img}
-                  alt={`${make} ${model}`}
-                />
-                <svg className="favorite-svg">
-                  <use href={`${sprite}#icon-trash`} />
-                </svg>
-                <div className="favorite-price">
-                  <p>
-                    {make} {model}, {year}
-                  </p>
-                  <p>{rentalPrice}</p>
-                </div>
-                <ul className="favorite-tag__list">
-                  <li className="favorite-tag__item">
-                    {address?.split(', ')[1] ?? ''}
-                  </li>
-                  <li className="favorite-tag__item">
-                    {address?.split(', ')[2] ?? ''}
-                  </li>
-                  <li className="favorite-tag__item">{rentalCompany}</li>
-                  <li className="favorite-tag__item">{type}</li>
-                  <li className="favorite-tag__item">{make}</li>
-                  <li className="favorite-tag__item">{id}</li>
-                  <li className="favorite-tag__item">{accessories[2]}</li>
-                </ul>
-                <button
-                  onClick={() =>
-                    handleCarClickNew({
-                      id,
-                      img,
-                      make,
-                      model,
-                      year,
-                      rentalPrice,
-                      address,
-                      type,
-                      accessories,
-                      rentalCompany,
-                      mileage,
-                      fuelConsumption,
-                      engineSize,
-                      description,
-                      rentalConditions,
-                      functionalities,
-                    })
-                  }
-                  className="favorite-button"
-                >
-                  Learn More
-                </button>
-              </li>
-            )
-          )}
+          {favoritesCars.map(car => (
+            <li className="favorite-item" key={car.id}>
+              <img
+                className="favorite-image"
+                src={car.img}
+                alt={`${car.make} ${car.model}`}
+              />
+              <svg
+                className="favorite-svg"
+                onClick={() => handleDeleteClick(car.id)}
+              >
+                <use href={`${sprite}#icon-trash`} />
+              </svg>
+              <div className="favorite-price">
+                <p>
+                  {car.make} {car.model}, {car.year}
+                </p>
+                <p>{car.rentalPrice}</p>
+              </div>
+              <ul className="favorite-tag__list">
+                <li className="favorite-tag__item">
+                  {car.address?.split(', ')[1] ?? ''}
+                </li>
+                <li className="favorite-tag__item">
+                  {car.address?.split(', ')[2] ?? ''}
+                </li>
+                <li className="favorite-tag__item">{car.rentalCompany}</li>
+                <li className="favorite-tag__item">{car.type}</li>
+                <li className="favorite-tag__item">{car.make}</li>
+                <li className="favorite-tag__item">{car.id}</li>
+                <li className="favorite-tag__item">{car.accessories[2]}</li>
+              </ul>
+              <button
+                onClick={() => handleCarClickNew(car)}
+                className="favorite-button"
+              >
+                Learn More
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
       {showModal && (
