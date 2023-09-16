@@ -83,14 +83,14 @@
 .select-input__from::placeholder {
   color: #121417;
 
-  font-size: 18px;
+  font-size: 14px;
 
   line-height: 20px;
 }
 .select-input__to::placeholder {
   color: #121417;
 
-  font-size: 18px;
+  font-size: 14px;
 
   line-height: 20px;
 }

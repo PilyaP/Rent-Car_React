@@ -78,11 +78,13 @@ export const SelectFilter = ({ cars, onFilterChange }) => {
           value={selectedMake}
         >
           <option value="all">All</option>
-          {cars?.map((item, index) => (
-            <option key={index} value={item.make}>
-              {item.make}
-            </option>
-          ))}
+          {Array.from(new Set(cars?.map(item => item.make))).map(
+            (make, index) => (
+              <option key={index} value={make}>
+                {make}
+              </option>
+            )
+          )}
         </select>
       </label>
       <label className="select-label">
