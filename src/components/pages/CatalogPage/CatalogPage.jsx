@@ -28,7 +28,6 @@ export const CatalogPage = ({
         );
         let data = await response.json();
 
-        // Синхронизация поля isFavorited с массивом favoriteCars
         const favoriteCarIds = new Set(favoriteCars);
         data = data.map(car => ({
           ...car,
@@ -51,7 +50,7 @@ export const CatalogPage = ({
     if (storedFavoriteCars) {
       setFavoriteCars(storedFavoriteCars);
     }
-  }, []);
+  }, [setFavoriteCars]);
 
   const loadMoreCars = () => {
     setDisplayedCarsCount(prevCount => prevCount + 8);
