@@ -7,7 +7,7 @@ import './FavoritePage.css';
 export const FavoritePage = ({
   cars,
   favoriteCars,
-  setFavoriteCars, // убедитесь, что setFavoriteCars импортирован или передан через пропы
+  setFavoriteCars,
   selectedCar,
   setSelectedCar,
   showModal,
@@ -28,7 +28,6 @@ export const FavoritePage = ({
 
       console.log(updatedFavoriteCars);
 
-      // Обновление данных в локальном хранилище с использованием нового состояния
       localStorage.setItem('favoriteCars', JSON.stringify(updatedFavoriteCars));
 
       return updatedFavoriteCars;

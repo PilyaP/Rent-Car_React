@@ -1,13 +1,13 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 import { Loader } from './Loader/Loader';
 import { HomePage } from './pages/HomePage';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
 import { FavoritePage } from './pages/FavoritePage';
+import { Header } from './Header/Header';
 
 export const App = () => {
   const [cars, setCars] = useState([]);

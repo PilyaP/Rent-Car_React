@@ -1,4 +1,4 @@
-import { Loader } from 'components/Loader/Loader';
+// import { Loader } from 'components/Loader/Loader';
 import React, { useState, useEffect } from 'react';
 import './CatalogPage.css';
 import { Modal } from 'components/Modal/Modal';
