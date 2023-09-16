@@ -9,13 +9,15 @@ export const FavoritePage = ({
   favoriteCars,
   setFavoriteCars,
   selectedCar,
+  filteredCars,
   setSelectedCar,
   showModal,
+  setShowModal,
   toggleModal,
 }) => {
   const handleCarClickNew = carDetails => {
     setSelectedCar(carDetails);
-    toggleModal(true);
+    toggleModal();
   };
 
   const handleDeleteClick = carId => {

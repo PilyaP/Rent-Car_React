@@ -4,15 +4,18 @@ import './CatalogPage.css';
 import { Modal } from 'components/Modal/Modal';
 import { CarInfo } from 'components/CarInfo/CarInfo';
 import sprite from '../../sprite.svg';
+import { SelectFilter } from 'components/SelectFilter/SelectFilter';
 
 export const CatalogPage = ({
   cars,
   setCars,
   loading,
+  filteredCars,
   setFavoriteCars,
   setLoading,
   favoriteCars,
   updateFavoriteCars,
+  onFilterChange,
 }) => {
   const [displayedCarsCount, setDisplayedCarsCount] = useState(8);
   const [selectedCar, setSelectedCar] = useState(null);
@@ -76,11 +79,18 @@ export const CatalogPage = ({
     });
   };
 
+  // console.log(filteredCars.length);
+
   return (
     <>
+      <SelectFilter
+        onFilterChange={onFilterChange}
+        filteredCars={filteredCars}
+        cars={cars}
+      />
       <div className="cars-container _container">
         <ul className="cars-list">
-          {cars
+          {filteredCars
             .slice(0, displayedCarsCount)
             .map(
               ({

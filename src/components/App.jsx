@@ -15,10 +15,9 @@ export const App = () => {
   const [favoriteCars, setFavoriteCars] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [filteredCars, setFilteredCars] = useState([]);
 
-  const toggleModal = value => {
-    setShowModal(value);
-  };
+  const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -52,6 +51,31 @@ export const App = () => {
       return updatedFavoriteCars;
     });
   };
+  const onFilterChange = filters => {
+    let filteredCarss = cars;
+
+    if (
+      filters.make !== '' ||
+      filters.priceRange.min !== 0 ||
+      filters.priceRange.max !== 1000 ||
+      filters.mileageRange.min !== 0
+    ) {
+      filteredCarss = cars.filter(
+        car =>
+          (filters.make === '' || car.make === filters.make) &&
+          parseInt(car.rentalPrice.substring(1)) >= filters.priceRange.min &&
+          parseInt(car.rentalPrice.substring(1)) <= filters.priceRange.max &&
+          car.mileage >= filters.mileageRange.min
+      );
+    }
+
+    setFilteredCars(filteredCarss);
+  };
+
+  console.log(filteredCars.length);
+
+  // console.log(cars.length);
+  // console.log(filteredCars.length);
 
   return (
     <Suspense fallback={<Loader />}>
@@ -64,11 +88,13 @@ export const App = () => {
             <CatalogPage
               setFavoriteCars={setFavoriteCars}
               cars={cars}
+              filteredCars={filteredCars}
               setCars={setCars}
               loading={loading}
               setLoading={setLoading}
               favoriteCars={favoriteCars}
               updateFavoriteCars={updateFavoriteCars}
+              onFilterChange={onFilterChange}
             />
           }
         />
@@ -78,11 +104,14 @@ export const App = () => {
             <FavoritePage
               cars={cars}
               favoriteCars={favoriteCars}
+              filteredCars={filteredCars}
               setFavoriteCars={setFavoriteCars}
               selectedCar={selectedCar}
               setSelectedCar={setSelectedCar}
               showModal={showModal}
+              setShowModal={setShowModal}
               toggleModal={toggleModal}
+              onFilterChange={onFilterChange}
             />
           }
         />
