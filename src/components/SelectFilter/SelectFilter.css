@@ -1,6 +1,7 @@
 .select-container {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
   margin-top: 30px;

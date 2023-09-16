@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './SelectFilter.css';
 
 export const SelectFilter = ({ cars, onFilterChange }) => {
@@ -7,6 +7,11 @@ export const SelectFilter = ({ cars, onFilterChange }) => {
   const [mileageRange, setMileageRange] = useState({ min: '', max: '' });
 
   const [maxPrice, setMaxPrice] = useState(1000);
+
+  const prevCars = useRef(cars);
+  const prevSelectedMake = useRef(selectedMake);
+  const prevPriceRange = useRef(priceRange);
+  const prevMileageRange = useRef(mileageRange);
 
   useEffect(() => {
     if (cars && cars.length > 0) {
@@ -18,11 +23,7 @@ export const SelectFilter = ({ cars, onFilterChange }) => {
     }
   }, [cars]);
 
-  useEffect(() => {
-    handleFilterChange();
-  }, [cars]);
-
-  const handleFilterChange = () => {
+  const handleFilterChange = useCallback(() => {
     console.log('Selected Make:', selectedMake);
     console.log('Price Range:', priceRange);
     console.log('Mileage Range:', mileageRange);
@@ -34,24 +35,37 @@ export const SelectFilter = ({ cars, onFilterChange }) => {
       priceRange,
       mileageRange,
     });
-  };
+  }, [selectedMake, priceRange, mileageRange, onFilterChange]);
+
+  useEffect(() => {
+    if (
+      prevCars.current !== cars ||
+      prevSelectedMake.current !== selectedMake ||
+      prevPriceRange.current !== priceRange ||
+      prevMileageRange.current !== mileageRange
+    ) {
+      handleFilterChange();
+    }
+
+    prevCars.current = cars;
+    prevSelectedMake.current = selectedMake;
+    prevPriceRange.current = priceRange;
+    prevMileageRange.current = mileageRange;
+  }, [cars, selectedMake, priceRange, mileageRange, handleFilterChange]);
 
   const handleMakeChange = e => {
     setSelectedMake(e.target.value);
-    handleFilterChange();
   };
 
   const handlePriceRangeChange = e => {
     const min = parseInt(e.target.value, 10);
     setPriceRange(prev => ({ ...prev, min }));
-    handleFilterChange();
   };
 
   const handleMileageRangeChange = e => {
     const min = e.target.name === 'min' ? e.target.value : mileageRange.min;
     const max = e.target.name === 'max' ? e.target.value : mileageRange.max;
     setMileageRange({ min, max });
-    handleFilterChange();
   };
 
   return (

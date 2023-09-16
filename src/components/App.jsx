@@ -74,9 +74,6 @@ export const App = () => {
 
   console.log(filteredCars.length);
 
-  // console.log(cars.length);
-  // console.log(filteredCars.length);
-
   return (
     <Suspense fallback={<Loader />}>
       <Header />

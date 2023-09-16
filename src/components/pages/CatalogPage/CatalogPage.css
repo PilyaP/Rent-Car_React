@@ -96,3 +96,9 @@
 .learn-button:focus {
   background-color: #0b44cd;
 }
+
+@media (max-width: 1200px) {
+  .cars-item {
+    width: auto;
+  }
+}
