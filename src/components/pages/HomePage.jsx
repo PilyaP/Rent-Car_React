@@ -37,6 +37,9 @@ export const HomePage = () => {
         <p className="homepage-text">
           Head to the catalog and choose the perfect car for yourself today!
         </p>
+        <a href="/Rent-Car_React/catalog" className="homepage__cta-button">
+          View Catalog
+        </a>
       </section>
     </div>
   );
