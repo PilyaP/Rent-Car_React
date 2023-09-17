@@ -9,10 +9,8 @@ export const FavoritePage = ({
   favoriteCars,
   setFavoriteCars,
   selectedCar,
-  filteredCars,
   setSelectedCar,
   showModal,
-  setShowModal,
   toggleModal,
 }) => {
   const handleCarClickNew = carDetails => {
@@ -21,14 +19,12 @@ export const FavoritePage = ({
   };
 
   const handleDeleteClick = carId => {
-    console.log('handleDeleteClick called with carId:', carId);
-
     setFavoriteCars(prevFavoriteCars => {
       const updatedFavoriteCars = prevFavoriteCars.filter(
         carIdInList => String(carIdInList) !== String(carId)
       );
 
-      console.log(updatedFavoriteCars);
+  
 
       localStorage.setItem('favoriteCars', JSON.stringify(updatedFavoriteCars));
 

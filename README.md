@@ -1,113 +1,62 @@
-# React homework template
+# Bandera Car Rental Company
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+Welcome to the official repository of the Bandera Car Rental Company, where we
+cherish and promote the spirit of unity and nationalism through our services. We
+are not just a car rental company; we are a movement, fostering love and respect
+for our heritage with a touch of modernity. Here at Bandera, we celebrate our
+love for 'Banderamobili' and shout out - Slava Ukraini!
 
-## Создание репозитория по шаблону
+## Project Overview
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+This project encapsulates the commitment and dedication of the Bandera Car
+Rental Company to offer unmatched services in the car rental industry. We have
+infused modern technological advancements with our traditional values to create
+a platform that is user-friendly, efficient, and resonates with the spirit of
+Ukraine.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+### Features
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+1. **User-Friendly Interface** - Our website is designed with the users in mind,
+   offering an interface that is easy to navigate and user-friendly.
+2. **Responsive Design** - Our platform guarantees an optimal viewing experience
+   across a range of devices, including mobile phones and desktops.
+3. **Customer Support** - Users can easily reach out to us through integrated
+   contact options for any inquiries or support they may need.
+4. **Social Media Integration** - Stay connected with us through popular social
+   media platforms and be the first to know about our latest offers and updates.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+### Getting Started
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+#### Prerequisites
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+- Ensure that you have Node.js installed on your system before setting up the
+  project.
+- You should have a text editor like Visual Studio Code installed for viewing
+  and editing the code.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+#### Installation
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+1. Clone the repository using the command: `git clone <repository_url>`.
+2. Navigate to the project directory: `cd <project_name>`.
+3. Install the necessary packages: `npm install`.
+4. Start the development server: `npm start`.
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+## Contributing
 
-## Подготовка к работе
+We value the contributions of our community. If you have suggestions or would
+like to contribute to our project, feel free to open an issue or submit a pull
+request.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+## Contact Us
 
-## Деплой
+For any feedback, queries, or collaboration opportunities, please contact us at:
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+- Phone: +380730000000
+- Email: support@rentacar.ua
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+## License
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+This project is licensed under the MIT License. For more details, see the
+[LICENSE](LICENSE) file.
 
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Thank you for visiting our repository. Glory to Ukraine!

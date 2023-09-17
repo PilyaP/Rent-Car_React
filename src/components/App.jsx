@@ -1,8 +1,6 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Footer from './Footer/Footer';
-
 import { Loader } from './Loader/Loader';
 import { HomePage } from './pages/HomePage';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
@@ -28,7 +26,6 @@ export const App = () => {
         const data = await response.json();
         setCars(data);
       } catch (error) {
-        console.log(error.message);
       } finally {
         setLoading(false);
       }
@@ -72,8 +69,6 @@ export const App = () => {
     setFilteredCars(filteredCarss);
   };
 
-  console.log(filteredCars.length);
-
   return (
     <Suspense fallback={<Loader />}>
       <Header />
@@ -113,7 +108,6 @@ export const App = () => {
           }
         />
       </Routes>
-      <Footer />
     </Suspense>
   );
 };

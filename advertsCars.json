@@ -260,31 +260,32 @@
   "mileage": 5352
  },
  {
-  "id": 9586,
-  "year": 2020,
-  "make": "Volvo",
-  "model": "XC60",
-  "type": "SUV",
+  "id": 7586,
+  "year": 2022,
+  "make": "Bender",
+  "model": "Benderomobile",
+  "type": "Super Car",
   "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/volvo_xc60.webp",
-  "description": "The Volvo XC60 is a compact luxury SUV with a beautiful interior, strong performance, and advanced safety features.",
+  "description": "The Benderomobile is a luxurious SUV, combining a refined interior, powerful dynamics, and advanced safety features, revamped to provide an outstanding Bender-style experience.",
   "fuelConsumption": "7.9",
   "engineSize": "2.0L 4-cylinder",
   "accessories": [
-   "Premium leather seats",
-   "Harman Kardon audio system",
-   "Hands-free power tailgate"
+    "Javelin missile launcher",
+    "Orc detector",
+    "Bender class howitzer"
   ],
   "functionalities": [
-   "City Safety collision avoidance technology",
-   "Pilot Assist with adaptive cruise control",
-   "9-inch Sensus touchscreen infotainment system"
+    "Anti-Aircraft Defense System (PVO)",
+    "Pig-dog sensor",
+    "Dog-cartridge mine detector"
   ],
-  "rentalPrice": "$45",
+  "rentalPrice": "$1000",
   "rentalCompany": "Luxury Car Rentals",
-  "address": "789 Example Boulevard, Odessa, Ukraine",
+  "address": "Bavovna Aeroport, Chornobaevka, Ukraine",
   "rentalConditions": "Minimum age: 23\nValid driver's license\nCredit card required",
   "mileage": 5966
- },
+}
+,
  {
   "id": 9587,
   "year": 2006,

@@ -24,10 +24,6 @@ export const SelectFilter = ({ cars, onFilterChange }) => {
   }, [cars]);
 
   const handleFilterChange = useCallback(() => {
-    console.log('Selected Make:', selectedMake);
-    console.log('Price Range:', priceRange);
-    console.log('Mileage Range:', mileageRange);
-
     const makeFilter = selectedMake === 'all' ? '' : selectedMake;
 
     onFilterChange({

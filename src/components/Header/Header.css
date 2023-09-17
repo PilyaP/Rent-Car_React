@@ -6,6 +6,15 @@
 
 .header__logo {
   font-size: 24px;
+  background: linear-gradient(to right, #ffd700 40%, #0033cc 60%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__nav-list {
@@ -21,15 +30,14 @@
 
 .header__nav-link {
   text-decoration: none;
-  color: #000;
+  color: #0033cc;
   font-size: 18px;
 }
 
 .header__nav-link--active {
   font-weight: bold;
 }
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.header__nav-link:hover {
+  color: #ffcc00;
 }

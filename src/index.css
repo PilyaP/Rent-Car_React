@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
 
 body {
   color: #121417;
@@ -41,8 +41,3 @@ button {
   overflow: hidden;
 }
 
-/* @media (min-width: 1920px) {
-  ._container {
-    max-width: 1920px;
-  }
-} */

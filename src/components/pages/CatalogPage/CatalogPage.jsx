@@ -39,7 +39,6 @@ export const CatalogPage = ({
 
         setCars(data);
       } catch (error) {
-        console.log(error.message);
       } finally {
         setLoading(false);
       }
@@ -78,8 +77,6 @@ export const CatalogPage = ({
       return updatedCars;
     });
   };
-
-  // console.log(filteredCars.length);
 
   return (
     <>
@@ -178,7 +175,7 @@ export const CatalogPage = ({
               )
             )}
         </ul>
-        {displayedCarsCount < cars.length && (
+        {displayedCarsCount < filteredCars.length && (
           <div>
             <button className="bnt-loadmore" onClick={loadMoreCars}>
               Load more

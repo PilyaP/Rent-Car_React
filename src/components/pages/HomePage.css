@@ -1,35 +1,59 @@
-.homepage {
-    padding: 20px;
+.homepage-container {
+  max-width: 1184px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #0044cc;
+  text-align: center;
 }
 
-.homepage__header {
-    text-align: center;
-    padding: 20px 0;
+.homepage-hero {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffcc00;
 }
 
-.homepage__header h1 {
-    margin: 0 0 10px;
-    font-size: 2em;
+.homepage-text {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-.homepage__header p {
-    margin: 0;
-    font-size: 1.2em;
-    color: gray;
+.homepage-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #ffcc00;
 }
 
-.homepage__description,
-.homepage__features,
-.homepage__cta {
-    margin: 20px 0;
+.homepage__banderomobile-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.homepage__features h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
+.homepage-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-.homepage__features ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.homepage-item {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #0044cc;
+}
+
+.homepage__cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ffcc00;
+  color: #0044cc;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.homepage__cta-button:hover {
+  background-color: #e6b800;
 }

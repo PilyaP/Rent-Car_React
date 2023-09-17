@@ -3,29 +3,38 @@ import './HomePage.css';
 
 export const HomePage = () => {
   return (
-    <div className="homepage">
-      <header className="homepage__header">
-        <h1>Welcome to our Car Rental Service</h1>
-        <p>Your reliable partner in car rental in Ukraine</p>
-      </header>
+    <div className="homepage-container _container">
+      <h1 className="homepage-hero">Welcome to our Car Rental Service</h1>
+      <p className="homepage-text">
+        Your reliable partner in car rental in Ukraine
+      </p>
       <section className="homepage__description">
-        <p>
+        <p className="homepage-text">
           Our service offers a wide range of cars to suit any taste and budget.
-          Whether you are looking for an economical hatchback for the weekend or
-          a premium sedan for a special occasion, we can meet your needs.
+          Our Ukrainian clients appreciate our dedication to providing quality
+          vehicles at competitive prices, with the convenience of easy online
+          booking and exceptional customer service.
         </p>
       </section>
-      <section className="homepage__features">
-        <h2>Why Choose Us</h2>
-        <ul>
-          <li>Wide selection of cars</li>
-          <li>Affordable prices</li>
-          <li>Easy booking through online catalog</li>
-          <li>Friendly customer support</li>
-        </ul>
+
+      <section className="homepage__banderomobile">
+        <h2 className="homepage-title">Experience the Unique Banderomobile</h2>
+        <p className="homepage-text">
+          We are proud to present a one-of-a-kind experience for our clients -
+          the unique Banderomobile, available exclusively at our car rental
+          service in Ukraine. Immerse yourself in a unique driving experience
+          with this specially designed vehicle, which showcases the spirit and
+          pride of Ukrainian craftsmanship.
+        </p>
+        <img
+          src="https://res.cloudinary.com/dhw6rxosn/image/upload/v1694901006/bandero_mobil.jpg"
+          alt="Banderomobile"
+          className="homepage__banderomobile-image"
+        />
       </section>
+
       <section className="homepage__cta">
-        <p>
+        <p className="homepage-text">
           Head to the catalog and choose the perfect car for yourself today!
         </p>
         <a href="/catalog" className="homepage__cta-button">
